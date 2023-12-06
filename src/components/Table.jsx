@@ -156,14 +156,15 @@ const [rowsPerPage, setRowsPerPage] = useState(5);
         </thead>
         <tbody>
           {paginatedData.map((item, index) => (
-            <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
-            <td style={{ paddingLeft: '10px' }}>
+      <td style={{ paddingLeft: '10px' }}>
                 <input
                   type="checkbox"
                   checked={selectedRows.includes(index)}
                   onChange={() => toggleSelectRow(index)}
                 />
               </td>
+            <tr key={index} style={{ borderBottom: '1px solid #ddd' }}>
+            
               <td style={tableCellStyle}>{editingIndex === index ? <input value={item.id} onChange={(e) => handleInputChange(e, 'id', index)} style={inputStyle} /> : item.id}</td>
               <td style={tableCellStyle}>{editingIndex === index ? <input value={item.name} onChange={(e) => handleInputChange(e, 'name', index)} style={inputStyle} /> : item.name}</td>
               <td style={tableCellStyle}>{editingIndex === index ? <input value={item.email} onChange={(e) => handleInputChange(e, 'email', index)} style={inputStyle} /> : item.email}</td>
